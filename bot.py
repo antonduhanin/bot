@@ -70,7 +70,7 @@ def main():
                 greet_bot.send_message(last_chat_id,s)
                 hour = now.hour
             elif last_chat_text == '/petuh':
-                greet_bot.send_message(last_chat_id,'Пробуй позже')
+                greet_bot.send_message(last_chat_id,'Попробуй позже')
                 greet_bot.send_message(last_chat_id,'Что за придурок, я ж не могу определять петухов круглосуточно')
 
 
