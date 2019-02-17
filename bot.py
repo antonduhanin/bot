@@ -46,7 +46,6 @@ class BotHandler:
             return ''
 
 greet_bot = BotHandler('659162348:AAHI4kbFbxslyLZD5GsjdBDl-_3aqQ0Wbt4')
-greetings = ('здравствуй', 'привет', 'ку', 'здорово')
 
 
 def main():
@@ -66,12 +65,12 @@ def main():
 
             if last_chat_text == '/petuh' and hour != now.hour:
                 count+=1
-                s = str("Олег Петух дня в: "+str(count)+" раз")
+                s = str("Oleg petuh of the day : "+str(count)+" time")
                 greet_bot.send_message(last_chat_id,s)
                 hour = now.hour
             elif last_chat_text == '/petuh':
-                greet_bot.send_message(last_chat_id,'Попробуй позже')
-                greet_bot.send_message(last_chat_id,'Что за придурок, я ж не могу определять петухов круглосуточно')
+                greet_bot.send_message(last_chat_id,'try later')
+                greet_bot.send_message(last_chat_id,'What a moron')
 
 
 
