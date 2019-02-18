@@ -61,7 +61,7 @@ def main():
         if last_update != '':
             last_chat_text = last_update['message']['text']
             last_chat_id = last_update['message']['chat']['id']
-            name = ['message']['from']['first_name']
+            name = last_update['message']['from']['first_name']
 
             if last_chat_text == '/petuh' and hour != now.hour:
                 count += 1
