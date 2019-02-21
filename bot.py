@@ -51,28 +51,29 @@ def main():
     now = datetime.datetime.now()
 
     hour = now.hour
-    count = 2
+    count = 0
     while True:
         greet_bot.get_updates()
 
         last_update = greet_bot.get_last_update()
         now = datetime.datetime.now()
 
-        if last_update != '':
+        if last_update != '' and 'message' in last_update:
             last_chat_text = last_update['message']['text']
             last_chat_id = last_update['message']['chat']['id']
             name = last_update['message']['from']['first_name']
 
             if last_chat_text == '/petuh' and hour != now.hour:
                 count += 1
-                s = str("Oleg petuh of the day : " + str(count) + " time")
+                s = str("Олег петух: " + str(count) + " раз")
                 greet_bot.send_message(last_chat_id, s)
                 hour = now.hour
             elif last_chat_text == '/petuh':
-                greet_bot.send_message(last_chat_id, 'try later please')
-                greet_bot.send_message(last_chat_id, 'What a moron!!!')
+                greet_bot.send_message(last_chat_id, ' Попробуй позже брат')
             elif name == 'Oleg':
-                greet_bot.send_message(last_chat_id, 'Петухам' + str(count) + '-разовым слово не давали')
+                if 'хах' in last_chat_text:
+                    greet_bot.send_message(last_chat_id, 'А что смешного?')
+                greet_bot.send_message(last_chat_id, 'Петухам ' + str(count) + '-разовым слово не давали')
 
 
 if __name__ == '__main__':
