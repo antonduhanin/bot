@@ -68,7 +68,7 @@ def main():
                 s = str("Олег петух: " + str(count) + " раз")
                 greet_bot.send_message(last_chat_id, s)
                 hour = now.hour
-            elif last_chat_text == '/petuh':
+            elif last_chat_text == '/petuh' and hour != now.hour:
                 greet_bot.send_message(last_chat_id, ' Попробуй позже брат')
             elif name == 'Oleg':
                 if 'хах' in last_chat_text:
